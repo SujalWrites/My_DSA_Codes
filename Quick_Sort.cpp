@@ -54,7 +54,7 @@ void quickSort(int input[], int start, int end) {
 	quickSort(input, pivot+1, end);
 }
 int main(){
-    int arr[]={2,65,43,24,78,1,9,8};
+    int arr[]={2,65,43,24,78,1,9,89};
     quickSort(arr,0,7);
     for(int i=0;i<=7;i++){
         cout<<arr[i]<<" ";
