@@ -1,13 +1,17 @@
 #include <vector>
 #include <algorithm>
+#include <climits>
+
+// Comparator function to sort pairs based on the second element
+bool comparator(const std::vector<int>& a, const std::vector<int>& b) {
+    return a[1] < b[1];
+}
 
 class Solution {
 public:
     int findLongestChain(std::vector<std::vector<int>>& pairs) {
-        // Step 1: Sort the pairs based on the second element of each pair
-        std::sort(pairs.begin(), pairs.end(), [](const std::vector<int>& a, const std::vector<int>& b) {
-            return a[1] < b[1];
-        });
+        // Step 1: Sort the pairs using the comparator function
+        sort(pairs.begin(), pairs.end(), comparator);
 
         // Initialize the chain
         int current_end = INT_MIN;
